@@ -1,9 +1,12 @@
 #include "http_tcpServer.h"
+
 int main()
 {
-    using namespace http;
-    TcpServer server = TcpServer("0.0.0.0",8080);
+    // Create and run the server on 0.0.0.0:8080
+    http::TcpServer server("0.0.0.0", 8080);
+
+    // Start listening (blocking call)
+    server.startListen();
 
     return 0;
-    
 }
