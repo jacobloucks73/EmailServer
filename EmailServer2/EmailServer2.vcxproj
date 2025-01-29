@@ -20,13 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="http_tcpServer.h" />
-    <ClInclude Include="http_tcpServer_linux.h" />
+    <ClInclude Include="smtp_server.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="http_tcpServer.cpp" />
     <ClCompile Include="http_tcpServer_linux.cpp" />
     <ClCompile Include="linuxServer.cpp" />
     <ClCompile Include="server.cpp" />
+    <ClCompile Include="smtp_server.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

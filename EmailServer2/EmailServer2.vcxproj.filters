@@ -18,7 +18,7 @@
     <ClInclude Include="http_tcpServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="http_tcpServer_linux.h">
+    <ClInclude Include="smtp_server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -33,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="linuxServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="smtp_server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,5 @@
 #include "http_tcpServer.h"
-
+#pragma comment(lib, "Ws2_32.lib")
 namespace http
 {
     TcpServer::TcpServer(const std::string& ipAddress, int port)
@@ -53,7 +53,10 @@ namespace http
         // Configure the sockaddr_in structure
         m_socketAddress.sin_family = AF_INET;
         m_socketAddress.sin_port = htons(m_port);
-        m_socketAddress.sin_addr.s_addr = inet_addr(m_ip_address.c_str());
+        if (inet_pton(AF_INET, m_ip_address.c_str(), &m_socketAddress.sin_addr) <= 0)
+        {
+            exitWithError("Invalid IP address format or inet_pton error");
+        }
 
         // Optionally set the SO_REUSEADDR socket option
         BOOL optval = TRUE;
