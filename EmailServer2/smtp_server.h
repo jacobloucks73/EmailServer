@@ -40,9 +40,12 @@ namespace smtp {
         std::string m_ip_address;
         int m_port;
 
-        // Security Metrics (For Resume)
+        // Security Metrics
         std::atomic<int> blockedRequests{ 0 };
         std::atomic<int> emailsProcessed{ 0 };
+
+        // Database 
+        sqlite3* m_db;
     };
 }
 
