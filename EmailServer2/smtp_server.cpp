@@ -8,6 +8,7 @@
 #include <regex>
 #include <sqlite3.h>
 
+
 namespace smtp {
 
 
@@ -45,9 +46,9 @@ namespace smtp {
         sqlite3* db;
 
 
-        if (sqlite3_open("smtp_server.db", &db) != SQLITE_OK) {
-            std::cerr << "Failed to open database: " << sqlite3_errmsg(db) << std::endl;
-            exit(1);
+        // In constructor:
+        if (sqlite3_open("smtp_server.db", &m_db) != SQLITE_OK) {
+            exitWithError("Failed to open database");
         }
 
         // Create tables if they don't exist
